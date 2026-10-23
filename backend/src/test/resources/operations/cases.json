@@ -1,0 +1,56 @@
+[
+  {
+    "patch": {},
+    "expected": {
+      "decision": "PASS",
+      "netInitial": "#10000",
+      "netAnnual": "#3000",
+      "npv": "#5000",
+      "discountedPaybackYears": "4"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "saving": "1000"
+    },
+    "expected": {
+      "decision": "HOLD"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "years": "1"
+    },
+    "expected": {
+      "decision": "HOLD",
+      "npv": "#-7000"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "grant": "10000"
+    },
+    "expected": {
+      "decision": "PASS",
+      "discountedPaybackYears": "0"
+    },
+    "error": false
+  },
+  {
+    "patch": {
+      "years": "0"
+    },
+    "expected": {},
+    "error": true
+  },
+  {
+    "patch": {
+      "grant": "10001"
+    },
+    "expected": {},
+    "error": true
+  }
+]

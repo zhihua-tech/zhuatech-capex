@@ -1,0 +1,97 @@
+{
+  "slug": "capex",
+  "title": "资本项目净现值与折现回收期",
+  "fields": [
+    {
+      "key": "id",
+      "label": "记录编号",
+      "type": "ID"
+    },
+    {
+      "key": "initial",
+      "label": "初始投入",
+      "type": "NUMBER",
+      "scale": 2,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "saving",
+      "label": "年节约额",
+      "type": "NUMBER",
+      "scale": 2,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "maintenance",
+      "label": "年新增维护费",
+      "type": "NUMBER",
+      "scale": 2,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "grant",
+      "label": "补助金额",
+      "type": "NUMBER",
+      "scale": 2,
+      "min": "0",
+      "max": "1000000000000"
+    },
+    {
+      "key": "discountPct",
+      "label": "年折现率%",
+      "type": "NUMBER",
+      "scale": 4,
+      "min": "0",
+      "max": "100"
+    },
+    {
+      "key": "years",
+      "label": "情景年数",
+      "type": "NUMBER",
+      "scale": 0,
+      "min": "1",
+      "max": "30"
+    }
+  ],
+  "columns": [
+    {
+      "key": "netInitial",
+      "label": "净初始投入"
+    },
+    {
+      "key": "netAnnual",
+      "label": "年度净节约"
+    },
+    {
+      "key": "npv",
+      "label": "情景净现值"
+    },
+    {
+      "key": "discountedPaybackYears",
+      "label": "折现回收整年数"
+    }
+  ],
+  "description": "按输入年度净节约、补助、折现率和最多30年期限计算情景NPV及折现回收期，不代替投资审批。",
+  "owner": "上海如静知华信息科技有限公司",
+  "website": "https://www.zhuatech.cn/",
+  "authorization": "商业授权或定制开发请微信添加微信号zhuatech或zhuatech2进行咨询。",
+  "version": 1,
+  "notes": "输入均须为已获授权的同口径数据。金额固定人民币元；比例为百分数。核算结果只用于复核，未审批、未写库、未发起外部调用，也未触发付款、签名、资料销毁或设备控制。建议不构成法律、安全、会计或碳核证结论。",
+  "sample": {
+    "asOf": "2026-10-23",
+    "records": [
+      {
+        "id": "ITEM-001",
+        "initial": "10000",
+        "saving": "4000",
+        "maintenance": "1000",
+        "grant": "0",
+        "discountPct": "0",
+        "years": "5"
+      }
+    ]
+  }
+}
